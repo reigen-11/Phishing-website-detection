@@ -1,0 +1,87 @@
+/* Set the font family and size for the entire document */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Center the container and set its width */
+.container {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+/* Style the header */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* Style the form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the input field */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Style the result container */
+.result {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.result h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.result p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Style the continue button */
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+

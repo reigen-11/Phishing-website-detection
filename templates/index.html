@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Phishing Detector</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="container">
+		<h1>Phishing Detector</h1>
+		<form method="post">
+			<label for="url">Enter URL :</label><br>
+			<input type="text" id="url" name="url" placeholder="e.g. www.google.com" required><br><br>
+			<input type="submit" value="Check">
+		</form>
+		{% if xx!=-1 %}
+		<div class="result">
+			<h2>Result:</h2>
+			<div id="prediction"></div>
+			<button id="button1" style="display:none;">Continue to Website</button>
+			<button id="button2" style="display:none;" onclick="window.location.href='/'">Do Not Continue</button>
+		</div>
+		{% endif %}
+	</div>
+	<script>
+		let x = '{{xx}}';
+		let num = x*100;
+		if (0 <= x && x < 0.50) {
+			num = 100-num;
+			document.getElementById("prediction").style.color = "red";
+			document.getElementById("prediction").classList.add("animate__animated", "animate__shakeX");
+			document.getElementById("button2").innerHTML = "Go Back and Try Again";
+		} else {
+			document.getElementById("prediction").style.color = "green";
+			document.getElementById("prediction").classList.add("animate__animated", "animate__bounceIn");
+		}
+		let txtx = num.toFixed(2);
+		if (x <= 1 && x >= 0.50) {
+			var label = "Website is "+txtx +"% safe to use...";
+			document.getElementById("prediction").innerHTML = label;
+			document.getElementById("button1").style.display="block";
+		} else if (0 <= x && x < 0.50) {
+			var label = "Website is "+txtx +"% unsafe to use..."
+			document.getElementById("prediction").innerHTML = label ;
+			document.getElementById("button2").style.display="block";
+		}
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+</body>
+</html>
