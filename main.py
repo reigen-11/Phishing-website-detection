@@ -4,11 +4,11 @@ import pandas as pd
 import pickle
 import warnings
 from sklearn import metrics
-from feature import FeatureExtraction
+from feature_extraction import FeatureExtraction
 
 warnings.filterwarnings('ignore')
 
-with open("pickle/model.pkl", "rb") as f:
+with open("models/model.pkl", "rb") as f:
     xgboost = pickle.load(f)
 
 app = Flask(__name__)
